@@ -1,0 +1,10 @@
+USE banco_core;
+
+SELECT NomeCompleto, NumeroConta, SaldoAtual
+FROM CLIENTE JOIN CONTA
+ON CLIENTE.CPF_CNPJ = CONTA.CPF_CNPJ_Cliente;
+
+SELECT * FROM TRANSACAO WHERE Valor > 100 ORDER BY Valor DESC;
+
+SELECT ContaOrigem, SUM(Valor) AS TotalEnviado
+FROM TRANSACAO GROUP BY ContaOrigem LIMIT 5;
